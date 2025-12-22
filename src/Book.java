@@ -1,5 +1,3 @@
-import java.time.Year;
-
 public class Book {
     private int id;
     private static int idGen = 0;
@@ -48,9 +46,8 @@ public class Book {
         this.author = author;
     }
     public void setYear(int year) {
-        int currentYear = Year.now().getValue();
-        if (year < 1500 || year > currentYear) {
-            throw new IllegalArgumentException("Year must be between 1500 and " + currentYear);
+        if (year < 1500 || year > 2025) {
+            throw new IllegalArgumentException("Year must be between 1500 and 2025" );
         }
         this.year = year;
     }
